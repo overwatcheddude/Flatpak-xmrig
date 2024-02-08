@@ -1,0 +1,27 @@
+id: io.github.overwatcheddude.flatpak_xmrig
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: xmrig
+finish-args:
+  - --share=network
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+modules:
+  - name: xmrig
+    buildsystem: simple
+    build-commands:
+      - install -D xmrig /app/bin/xmrig
+      - install -D config.json /app/bin/config.json
+      - install -D io.github.overwatcheddude.flatpak_xmrig.desktop /app/share/applications/io.github.overwatcheddude.flatpak_xmrig.desktop
+      - install -D io.github.overwatcheddude.flatpak_xmrig.svg /app/share/icons/hicolor/scalable/apps/io.github.overwatcheddude.flatpak_xmrig.svg
+    sources:
+      - type: file
+        path: xmrig
+      - type: file
+        path: config.json
+      - type: file
+        path: io.github.overwatcheddude.flatpak_xmrig.desktop
+      - type: file
+        path: io.github.overwatcheddude.flatpak_xmrig.svg

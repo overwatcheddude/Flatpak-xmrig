@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Terminal=true
+Name=XMRig
+Comment=Run XMRig in a Flatpak environment
+Keywords=XMRig;xmr;monero
+Exec=xmrig
+Icon=io.github.overwatcheddude.flatpak_xmrig
+Categories=Development;
